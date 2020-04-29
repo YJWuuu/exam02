@@ -28,7 +28,8 @@ for i in range(0, int(Fs)):
     z[i] = float(line)
     disX = abs(x[i]) * 9.8 * 0.1 * 0.1 / 2;
     disY = abs(y[i]) * 9.8 * 0.1 * 0.1 / 2;
-    disSum = disSum + disX + disY
+    if (disX + disY > 0.005):
+        disSum = disSum + disX + disY
     if (disSum > 0.05):
         tilt[i] = 1
         disSum = 0
